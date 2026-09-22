@@ -1,0 +1,304 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --spruce-dark: #00545f;
+    --spruce-deep: #003a42;
+    --spruce-light: #00707e;
+    --lime-neon: #d6fb00;
+    --lime-pastel: #ecffb6;
+    --canvas-light: #fafdf2;
+    --canvas-card: #ffffff;
+    --text-main: #00434c;
+    --text-muted: #3d686e;
+    --teal: #00545f;
+    --deep-teal: #003a42;
+    --gold: #d6fb00;
+    --cream: #fafdf2;
+    --text: #00434c;
+    --primary-green: #00545f;
+    --primary-gold: #d6fb00;
+  }
+  body {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--text-main);
+    background-color: var(--canvas-light);
+    overflow-x: hidden;
+  }
+  [lang="ml"], .font-malayalam {
+    font-family: 'Noto Sans Malayalam', 'Outfit', sans-serif;
+  }
+  .font-arabic, [lang="ar"] {
+    font-family: 'Amiri', serif;
+  }
+}
+
+/* Floating aesthetic lanterns with lime glow */
+.lantern {
+  position: absolute;
+  width: 38px;
+  height: 62px;
+  border: 3px solid #d6fb00;
+  border-radius: 12px;
+  opacity: 0.75;
+  animation: swaying 4s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(214, 251, 0, 0.45), inset 0 0 10px rgba(236, 255, 182, 0.35);
+  z-index: 10;
+  pointer-events: none;
+}
+.lantern::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 13px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #d6fb00;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+.lantern::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 14px;
+  width: 4px;
+  height: 8px;
+  background: #d6fb00;
+  border-radius: 2px;
+}
+.lantern-one {
+  left: 6%;
+  top: 15%;
+}
+.lantern-two {
+  right: 6%;
+  top: 60%;
+  animation-delay: 1.2s;
+}
+
+/* 3D Animated Cartoon Character */
+.animation-stage {
+  position: relative;
+  height: 480px;
+  display: grid;
+  place-items: center;
+  perspective: 1000px;
+}
+
+.glowing-orb {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 24%,
+    #ffffff,
+    #dff3ed 42%,
+    #a5d8d1
+  );
+  box-shadow:
+    inset -25px -30px 55px rgba(115, 184, 180, 0.25),
+    0 30px 60px rgba(18, 108, 113, 0.18);
+  animation: floating 5s ease-in-out infinite;
+}
+
+.cartoon-man {
+  position: relative;
+  width: 190px;
+  height: 365px;
+  transform-style: preserve-3d;
+  animation: floating 4.5s ease-in-out infinite 0.5s;
+  transition: transform 0.15s ease-out;
+}
+
+.head {
+  position: absolute;
+  top: 32px;
+  left: 52px;
+  width: 86px;
+  height: 92px;
+  border-radius: 48% 48% 45% 45%;
+  background: #b8794f;
+  box-shadow: inset -10px -4px #945d40;
+}
+
+.cap {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  left: 45px;
+  width: 100px;
+  height: 42px;
+  border-radius: 55% 55% 20% 20%;
+  background: white;
+  box-shadow: 0 8px 0 #e8e7dd;
+}
+
+.eye {
+  position: absolute;
+  z-index: 5;
+  top: 74px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #12343b;
+}
+
+.eye-left {
+  left: 78px;
+}
+
+.eye-right {
+  left: 108px;
+}
+
+.smile {
+  position: absolute;
+  z-index: 5;
+  top: 92px;
+  left: 83px;
+  width: 27px;
+  height: 12px;
+  border-bottom: 3px solid #663d31;
+  border-radius: 50%;
+}
+
+.body-jubba {
+  position: absolute;
+  top: 120px;
+  left: 35px;
+  width: 120px;
+  height: 190px;
+  border-radius: 48px 48px 26px 26px;
+  background: white;
+  box-shadow:
+    inset -15px 0 #ededdf,
+    0 15px 25px rgba(49, 93, 90, 0.15);
+}
+
+.scarf {
+  position: absolute;
+  z-index: 4;
+  top: 116px;
+  left: 76px;
+  width: 38px;
+  height: 90px;
+  border-radius: 0 0 20px 20px;
+  background: #d6fb00;
+  box-shadow: 0 4px 10px rgba(214, 251, 0, 0.4);
+}
+
+.arm {
+  position: absolute;
+  top: 145px;
+  width: 35px;
+  height: 125px;
+  border-radius: 30px;
+  background: white;
+  transform-origin: top;
+}
+
+.arm-left {
+  left: 14px;
+  transform: rotate(24deg);
+  animation: waving 2.4s ease-in-out infinite;
+}
+
+.arm-right {
+  right: 8px;
+  transform: rotate(-18deg);
+}
+
+.hand {
+  position: absolute;
+  top: 258px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  background: #b8794f;
+}
+
+.hand-left {
+  left: 33px;
+}
+
+.hand-right {
+  right: 11px;
+}
+
+.foot {
+  position: absolute;
+  top: 294px;
+  width: 52px;
+  height: 48px;
+  border-radius: 18px 18px 8px 8px;
+  background: #27454d;
+}
+
+.foot-left {
+  left: 44px;
+}
+
+.foot-right {
+  right: 43px;
+}
+
+@keyframes floating {
+  50% {
+    transform: translateY(-16px) rotateY(8deg);
+  }
+}
+
+@keyframes waving {
+  50% {
+    transform: rotate(-22deg);
+  }
+}
+
+@keyframes swaying {
+  50% {
+    transform: rotate(8deg) translateY(8px);
+  }
+}
+
+/* Floating AI Assistant Button Glow & Hover */
+#floating-ai-button {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 20px -4px rgba(0, 84, 95, 0.4), 0 0 10px rgba(214, 251, 0, 0.3);
+}
+
+#floating-ai-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px -4px rgba(0, 84, 95, 0.5), 0 0 25px rgba(214, 251, 0, 0.6);
+  border-color: #d6fb00;
+}
+
+@media print {
+  nav, footer, .no-print, button, .print-hide {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  #printable-document, #printable-document *,
+  #printable-certificate-document, #printable-certificate-document *,
+  #printable-receipt-document, #printable-receipt-document * {
+    visibility: visible;
+  }
+  #printable-document,
+  #printable-certificate-document,
+  #printable-receipt-document {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+}
+

@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix MAHAL CONNECT",
+  "description": "One Mahal. One Digital Home. Modern bilingual platform for Mahal community management, digital payments, Nikah registration, welfare, Zakah, certificates, and AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
